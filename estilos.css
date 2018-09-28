@@ -1,0 +1,28 @@
+/*estilos.css*/
+/*Declaro variables que contengan un color para luego me sea mas facil si decido editar el color de fondo, se declaran arriba de todo :root*/
+:root {
+    /*Le ongo -- para que identifique que es una variable*/
+    --blanco:#FFF;
+    --negro:#000;
+    --naranja:#F90;
+}
+/*Esto es reinicio general*/
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial;
+    background-image: url(images/pattern.jpg)
+}
+.cabecera {
+    margin: auto;
+    max-width: 1000px;
+}
+.contenido {
+    margin: auto;
+    max-width: 1000px;
+    /*2° USO LA VARIABLE CREADA*/
+    background-color: var(--blanco);
+}
