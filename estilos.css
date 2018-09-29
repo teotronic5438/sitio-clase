@@ -5,6 +5,7 @@
     --blanco:#FFF;
     --negro:#000;
     --naranja:#F90;
+    --gris:#333;
 }
 /*Esto es reinicio general*/
 * { 
@@ -16,13 +17,131 @@ body {
     font-family: Arial;
     background-image: url(images/pattern.jpg)
 }
-.cabecera {
-    margin: auto;
-    max-width: 1000px;
-}
+
 .contenido {
     margin: auto;
     max-width: 1000px;
     /*2° USO LA VARIABLE CREADA*/
     background-color: var(--blanco);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+/* --------------------
+        Cabecera 
+   --------------------  
+*/
+.cabecera {
+    margin: auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 15px;
+}
+
+.cabecera h1 {
+    color: var(--naranja)
+}
+/* --------------------
+        Navegacion 
+   --------------------  
+*/
+.nav {
+    background-color: var(--naranja);
+    padding: 10px 40px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-bottom: 30px;
+}
+.nav-lista {
+    display: flex;
+    list-style: none;
+}
+.nav-lista_item {
+    border-left: 1px solid var(--blanco); 
+    text-align: center;
+}
+.nav-lista_item:first-child {
+    border: none;
+}
+.nav-lista_item a {
+    display: block;
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 7px 12px;
+    
+}
+.nav-lista_item:hover {
+    text-decoration: underline;
+}
+/* --------------------
+    Slider / Carrousel
+   --------------------  
+*/
+.slider {
+    text-align: center;
+    margin-bottom: 50px;
+}
+/* --------------------
+    ZONA IZQ DER
+   --------------------  
+*/
+.zona {
+    background-color: pink;
+    display: flex;
+}
+.izq {
+    flex-grow: 1;  /*Propiedad para que abarque todo el ancho del contenido*/
+    margin-right: 32px;
+}
+.der {
+    background-color: skyblue;
+    flex-grow: 1;  /*Propiedad para que abarque todo el ancho del contenido*/
+    width: 70%;
+    display: grid; /*indica que qestamos listos para usar grilla pero luego debemos indicar como usarla*/
+    /*Los fragments generar lo mismo, divide los porcentajes automaticamente y lo aplica para que no desborde el 100%*/
+    grid-template-columns: 1fr 1fr;
+    /*grid-template-columns*/
+    grid-gap: 20px;
+}
+/* --------------------
+    Navegacion Izquierda  BEM / CSSOM 
+   --------------------  
+*/
+.izq-lista {
+    list-style: none;
+    margin-left: 33px;
+}
+.izq-lista_item a {
+    display: block;
+    color: var(--negro);
+    text-decoration: none;
+    padding: 4px 0;
+    border-bottom: 1px dashed var(--gris);
+    transition: all 0.5s;
+}
+.izq-lista_item a:hover {
+    text-decoration: underline;
+    padding-left: 10px;
+}
+.izq-titulo {
+    margin-left: 25px;
+    margin-bottom: 10px;
+}
+/* --------------------
+    Producto Derecha 
+   --------------------  
+*/
+.producto img {
+    float: left;
+    margin-right: 12px;
+}
+.producto p {
+    float: left;
+    width: 50%;
+}
+.producto h2 {
+    margin-bottom: 12px;
 }
